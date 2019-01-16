@@ -1,0 +1,257 @@
+<html>
+    <head>
+        <script type="text/javascript" src="jquery.js"></script>
+        <style>
+            .tile_f, .tile_s, .tile_l, .tile_lr, .tile_r {
+                width: 28px;
+                height: 21px;
+                position: absolute;
+            }
+            .tile_f {
+                background-image: url( tile_f.png );
+            }
+            .tile_s {
+                background-image: url( tile_s.png );
+            }
+            .tile_l {
+                background-image: url( tile_l.png );
+            }
+            .tile_lr {
+                background-image: url( tile_lr.png );
+            }
+            .tile_r {
+                background-image: url( tile_r.png );
+            }
+
+            #player {
+                width: 18px;
+                height: 27px;
+                background-image: url( cube.png );
+                position: absolute;
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                var map = $('#map');
+                var tiles = [];
+
+                var x = 1;
+                var y = 1;
+
+                var size = 30;
+
+                while (y <= size) {
+                    while (x <= size) {
+                        var type = Math.floor(Math.random()*3) + 1;
+                        switch (type) {
+                            case 1: type='r'; break;
+                            case 2: type='lr'; break;
+                            case 3: type='l'; break;
+                        }
+
+                        if (x==1 || y==1 || x==size || y==size) {
+                            type = 's';
+                        }
+
+                        tiles[x + '-' + y] = type;
+
+                        x ++;
+                    }
+
+                    y ++;
+                    x = 1;
+                }
+
+                var focal_x = Math.floor(Math.random()*(size-4)) + 3;
+                var focal_y = Math.floor(Math.random()*(size-4)) + 3;
+
+                var focal_tiles = [];
+                var focal_count = 0;
+                var max_focal_count = (size - 2) * (size - 2);
+
+                function search_focal (x, y) {
+                    if (focal_tiles[x + '-' + y]) {
+                        return;
+                    }
+
+                    focal_count ++;
+                    focal_tiles[x + '-' + y] = 1;
+                    var type = tiles[x + '-' + y];
+
+                    // l = x wall
+                    // r = y wall
+
+                    if (x>2 && (type =='r' || type == 'f')) {
+                        search_focal(x-1, y);
+                    }
+
+                    if (y>2 && (type == 'l' || type == 'f')) {
+                        search_focal(x, y-1);
+                    }
+
+                    var x_type = tiles[(x+1) + '-' + y];
+                    if (x<(size-1) && (x_type=='r' || x_type=='f')) {
+                        search_focal(x+1, y);
+                    }
+
+                    var y_type = tiles[x + '-' + (y+1)];
+                    if (y<(size-1) && (y_type=='l' || y_type=='f')) {
+                        search_focal(x, y+1);
+                    }
+                }
+
+                search_focal( focal_x, focal_y );
+
+                var last_focal_count = 0;
+                while (focal_count < max_focal_count) {
+                    x = 2;
+                    y = 2;
+
+                    while (y < size) {
+                        while (x < size) {
+                            if (!focal_tiles[x + '-' + y]) {
+                                if (x>2 && focal_tiles[(x-1) + '-' + y]) {
+                                    if (tiles[x + '-' + y] == 'l') {
+                                        tiles[x + '-' + y] = 'f';
+                                        search_focal( x, y );
+                                    }
+                                    else if (tiles[x + '-' + y] == 'lr') {
+                                        tiles[x + '-' + y] = 'r';
+                                        search_focal( x, y );
+                                    }
+                                }
+                                else if (y>2 && focal_tiles[x + '-' + (y-1)]) {
+                                    if (tiles[x + '-' + y] == 'r') {
+                                        tiles[x + '-' + y] = 'f';
+                                        search_focal( x, y );
+                                    }
+                                    else if (tiles[x + '-' + y] == 'lr') {
+                                        tiles[x + '-' + y] = 'l';
+                                        search_focal( x, y );
+                                    }
+                                }
+                                else if (x<(size-1) && focal_tiles[(x+1) + '-' + y]) {
+                                    if (tiles[(x+1) + '-' + y] == 'l') {
+                                        tiles[(x+1) + '-' + y] = 'f';
+                                        search_focal( x, y );
+                                    }
+                                    else if (tiles[(x+1) + '-' + y] == 'lr') {
+                                        tiles[(x+1) + '-' + y] = 'r';
+                                        search_focal( x, y );
+                                    }
+                                }
+                                else if (y<(size-1) && focal_tiles[x + '-' + (y+1)]) {
+                                    if (tiles[x + '-' + (y+1)] == 'r') {
+                                        tiles[x + '-' + (y+1)] = 'f';
+                                        search_focal( x, y );
+                                    }
+                                    else if (tiles[x + '-' + (y+1)] == 'lr') {
+                                        tiles[x + '-' + (y+1)] = 'l';
+                                        search_focal( x, y );
+                                    }
+                                }
+                            }
+                            x ++;
+                        }
+
+                        y ++;
+                        x = 2;
+                    }
+
+                    if (focal_count == last_focal_count) {
+                        focal_count = max_focal_count;
+                    }
+                    last_focal_count = focal_count;
+                }
+
+                x = 1;
+                y = 1;
+                while (y <= size) {
+                    while (x <= size) {
+                        var tile = $('<div></div>');
+                        var type = tiles[x + '-' + y];
+
+                        var coords = transform( x, y );
+                        var left = coords[0];
+                        var top = coords[1];
+
+                        tile.addClass('tile_' + type);
+                        tile.css('left', left + 'px');
+                        tile.css('top', top + 'px');
+                        tile.css('z-index', ((x+y) * 10));
+                        map.append( tile );
+
+                        x ++;
+                    }
+
+                    y ++;
+                    x = 1;
+                }
+
+                function transform (x, y) {
+                    var left = 0;
+                    left = left + (x * 14);
+                    left = left - (y * 14);
+
+                    var top = 0;
+                    top = top + (y * 7);
+                    top = top + (x * 7);
+
+                    left = left + (size * 14);
+
+                    return [ left, top ];
+                }
+
+                var player_x = 2;
+                var player_y = size - 1;
+                var player = $('#player');
+
+                function draw_player () {
+                    var coords = transform( player_x, player_y );
+                    var left = coords[0] + 5;
+                    var top = coords[1] - 8;
+
+                    player.css('left', left + 'px');
+                    player.css('top', top + 'px');
+                    player.css('z-index', ((player_x+player_y) * 10)+1);
+                }
+
+                draw_player();
+
+                $(document).keydown(function (e) {
+                    switch (e.keyCode) {
+                        case 40:
+                            if (player_y<(size-1) && (tiles[player_x + '-' + (player_y+1)] == 'l' || tiles[player_x + '-' + (player_y+1)] == 'f')) {
+                                player_y = player_y + 1;
+                            }
+                            break;
+                        case 38:
+                            if (player_y>2 && (tiles[player_x + '-' + player_y] == 'l' || tiles[player_x + '-' + player_y] == 'f')) {
+                                player_y = player_y - 1;
+                            }
+                            break;
+                        case 37:
+                            if (player_x>2 && (tiles[player_x + '-' + player_y] == 'r' || tiles[player_x + '-' + player_y] == 'f')) {
+                                player_x = player_x - 1;
+                            }
+                            break;
+                        case 39:
+                            if (player_x<(size-1) && (tiles[(player_x+1) + '-' + player_y] == 'r' || tiles[(player_x+1) + '-' + player_y] == 'f')) {
+                                player_x = player_x + 1;
+                            }
+                            break;
+                    }
+                    draw_player();
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+
+<div id="map">
+    <div id="player"></div>
+</div>
+
+    </body>
+</html>
