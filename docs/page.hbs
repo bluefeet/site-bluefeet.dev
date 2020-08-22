@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bzzzzzt</title>
+    <title>{{title}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/agate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -53,21 +53,13 @@
 
 <div class="header-outer">
 <div class="container-lg">
-    <h1>🌩 Bzzzzzt</h1>
+    <h1>{{icon}} {{title}}</h1>
 </div>
 </div>
 
 <div class="content-outer">
 <div class="container-lg">
-  <ul>
-<li><a href="https://github.com/bluefeet">GitHub</a></li>
-<li><a href="resume.pdf">Resume</a></li>
-<li><a href="https://metacpan.org/author/BLUEFEET">CPAN</a></li>
-<li><a href="http://www.youtube.com/watch?v=EIyixC9NsLI">Badgers</a>?</li>
-<li><a href="http://www.linkedin.com/in/bluefeet">LinkedIn</a></li>
-<li><a href="maze">Maze</a></li>
-</ul>
-
+  {{& content}}
 </div>
 </div>
 
