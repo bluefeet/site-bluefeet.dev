@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bzzzzzt</title>
+    <title>Zsh Cheatsheet</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -55,20 +55,116 @@
 
 <div class="header-outer">
 <div class="container-lg">
-    <h1>🌩️ Bzzzzzt</h1>
+    <h1>💤 Zsh Cheatsheet</h1>
 </div>
 </div>
 
 <div class="content-outer">
 <div class="container-lg">
-  <ul>
-<li><a href="https://github.com/bluefeet">GitHub</a></li>
-<li><a href="resume.pdf">Resume</a></li>
-<li><a href="https://metacpan.org/author/BLUEFEET">CPAN</a></li>
-<li><a href="http://www.youtube.com/watch?v=EIyixC9NsLI">Badgers</a>?</li>
-<li><a href="http://www.linkedin.com/in/bluefeet">LinkedIn</a></li>
-<li><a href="maze">Maze</a></li>
-</ul>
+  <table>
+<thead>
+<tr>
+<th>alias</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ga</code></td>
+<td><code>git add</code></td>
+</tr>
+<tr>
+<td><code>gapa</code></td>
+<td><code>git add --patch</code></td>
+</tr>
+<tr>
+<td><code>gbl</code></td>
+<td><code>git blame -b -w</code></td>
+</tr>
+<tr>
+<td><code>gcm</code></td>
+<td><code>git checkout $(git_main_branch)</code></td>
+</tr>
+<tr>
+<td><code>gcmsg</code></td>
+<td><code>git commit -m</code></td>
+</tr>
+<tr>
+<td><code>gco</code></td>
+<td><code>git checkout</code></td>
+</tr>
+<tr>
+<td><code>gd</code></td>
+<td><code>git diff</code></td>
+</tr>
+<tr>
+<td><code>gdca</code></td>
+<td><code>git diff --cached</code></td>
+</tr>
+<tr>
+<td><code>gdw</code></td>
+<td><code>git diff --word-diff</code></td>
+</tr>
+<tr>
+<td><code>gf</code></td>
+<td><code>git fetch</code></td>
+</tr>
+<tr>
+<td><code>gp</code></td>
+<td><code>git push</code></td>
+</tr>
+<tr>
+<td><code>gpf</code></td>
+<td><code>git push --force-with-lease</code></td>
+</tr>
+<tr>
+<td><code>gpf!</code></td>
+<td><code>git push --force</code></td>
+</tr>
+<tr>
+<td><code>grb</code></td>
+<td><code>git rebase</code></td>
+</tr>
+<tr>
+<td><code>grbm</code></td>
+<td><code>git rebase $(git_main_branch)</code></td>
+</tr>
+<tr>
+<td><code>groh</code></td>
+<td><code>git reset origin/$(git_current_branch) --hard</code></td>
+</tr>
+<tr>
+<td><code>gsh</code></td>
+<td><code>git show</code></td>
+</tr>
+<tr>
+<td><code>gss</code></td>
+<td><code>git status -s</code></td>
+</tr>
+<tr>
+<td><code>gsta</code></td>
+<td><code>git stash save</code></td>
+</tr>
+<tr>
+<td><code>gstp</code></td>
+<td><code>git stash pop</code></td>
+</tr>
+<tr>
+<td><code>gup</code></td>
+<td><code>git pull --rebase</code></td>
+</tr>
+<tr>
+<td><code>gupa</code></td>
+<td><code>git pull --rebase --autostash</code></td>
+</tr>
+<tr>
+<td><code>gwch</code></td>
+<td><code>git whatchanged -p --abbrev-commit --pretty=medium</code></td>
+</tr>
+<tr>
+<td><code>gwip</code></td>
+<td><code>git add -A; git rm $(git ls-files --deleted) 2&gt; /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"</code></td>
+</tr>
+</tbody></table>
 
 </div>
 </div>
@@ -77,7 +173,7 @@
 <div class="container-lg">
   © 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a><br>
   Last modified: 2020-08-22<br>
-  This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bzzzzzt</span></strong>" is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.<br>
+  This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Zsh Cheatsheet</span></strong>" is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.<br>
   Hosting provided by <a href="https://netlify.com/">Netlify</a>.
 </div>
 </div>

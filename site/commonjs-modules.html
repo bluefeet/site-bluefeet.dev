@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{title}}</title>
+    <title>CommonJS Modules</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -55,21 +55,25 @@
 
 <div class="header-outer">
 <div class="container-lg">
-    <h1>{{icon}} {{title}}</h1>
+    <h1>🐚 CommonJS Modules</h1>
 </div>
 </div>
 
 <div class="content-outer">
 <div class="container-lg">
-  {{& content}}
+  <p>Setup exports with the <code>module.exports</code> object:</p>
+<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = { someFunc1, someFunc2 };</code></pre>
+<p>Import a module with the <code>require</code> function:</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> { someFunc1 } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path/to/module'</span>);</code></pre>
+
 </div>
 </div>
 
 <div class="footer-outer">
 <div class="container-lg">
-  © {{createYear}} <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a><br>
-  Last modified: {{modifyDate}}<br>
-  This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">{{title}}</span></strong>" is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.<br>
+  © 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a><br>
+  Last modified: 2020-08-22<br>
+  This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CommonJS Modules</span></strong>" is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.<br>
   Hosting provided by <a href="https://netlify.com/">Netlify</a>.
 </div>
 </div>

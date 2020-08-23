@@ -1,6 +1,6 @@
 ---
 title: Bzzzzzt
-icon: 🌩
+icon: 🌩️
 ---
 
 - [GitHub](https://github.com/bluefeet)

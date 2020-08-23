@@ -9,6 +9,8 @@ const highlight = require('highlight.js');
 const jsyaml = require('js-yaml');
 const path = require('path');
 const fs = require('fs');
+const util = require('util');
+const { execSync } = require('child_process');
 
 const fileRe = /\.md$/;
 const files = [];
@@ -17,21 +19,21 @@ const dirs = ['.'];
 process.chdir('docs');
 
 while (dirs.length) {
-    const dir = dirs.shift();
-    const things = fs.readdirSync( dir );
+  const dir = dirs.shift();
+  const things = fs.readdirSync( dir );
 
-    for (const thing of things) {
-        const thingPath = path.join(dir, thing);
-        const stat = fs.statSync( thingPath );
+  for (const thing of things) {
+    const thingPath = path.join(dir, thing);
+    const stat = fs.statSync( thingPath );
 
-        if (stat.isDirectory()) {
-            dirs.push( thingPath );
-        }
-        else if (stat.isFile() && fileRe.exec(thing)) {
-            console.log(`Found: docs/${thingPath}`);
-            files.push( thingPath );
-        }
+    if (stat.isDirectory()) {
+      dirs.push( thingPath );
     }
+    else if (stat.isFile() && fileRe.exec(thing)) {
+      console.log(`Found: docs/${thingPath}`);
+      files.push( thingPath );
+    }
+  }
 }
 
 process.chdir('..');
@@ -42,31 +44,39 @@ const pageTemplate = handlebars.compile( pageRaw );
 const frontMatterRe = /^---\n(.*)\n---\n(.*)$/s;
 
 marked.setOptions({
-    highlight: function (code, lang) {
-        return highlight.highlight( lang, code ).value;
-    },
+  highlight: function (code, lang) {
+    return highlight.highlight( lang || 'text', code ).value;
+  },
 });
 
 for (let mdFile of files) {
-    const htmlFile = path.join( 'site', path.dirname( mdFile ), path.basename( mdFile, '.md' ) + '.html' );
-    console.log(`Generating: ${htmlFile}`);
-    mdFile = path.join( 'docs', mdFile );
+  const htmlFile = path.join( 'site', path.dirname( mdFile ), path.basename( mdFile, '.md' ) + '.html' );
+  console.log(`Generating: ${htmlFile}`);
+  mdFile = path.join( 'docs', mdFile );
 
-    fs.mkdirSync( path.dirname( htmlFile ), {recursive:true} );
+  const logLines = execSync(
+    `git log --pretty=format:"%as" -- ${mdFile}`,
+  ).toString().split("\n");
+  const createYear = logLines[ logLines.length - 1 ].split("-")[0];
+  const modifyDate = logLines[0];
 
-    const raw = fs.readFileSync( mdFile ).toString();
-    const parts = frontMatterRe.exec( raw );
-    const [yaml, md] = parts ? [ parts[1], parts[2] ] : [undefined, raw];
+  fs.mkdirSync( path.dirname( htmlFile ), {recursive:true} );
 
-    const meta = yaml ? jsyaml.safeLoad( yaml ) : {};
+  const raw = fs.readFileSync( mdFile ).toString();
+  const parts = frontMatterRe.exec( raw );
+  const [yaml, md] = parts ? [ parts[1], parts[2] ] : [undefined, raw];
 
-    const dirtyHtml = marked( md );
-    const cleanHtml = dompurify.sanitize( dirtyHtml );
+  const meta = yaml ? jsyaml.safeLoad( yaml ) : {};
 
-    let pageHtml = pageTemplate({
-        content: cleanHtml,
-        ...meta,
-    });
+  const dirtyHtml = marked( md );
+  const cleanHtml = dompurify.sanitize( dirtyHtml );
 
-    fs.writeFileSync( htmlFile, pageHtml );
+  let pageHtml = pageTemplate({
+    createYear,
+    modifyDate,
+    content: cleanHtml,
+    ...meta,
+  });
+
+  fs.writeFileSync( htmlFile, pageHtml );
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bzzzzzt</title>
+    <title>VS Code Notes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -55,20 +55,37 @@
 
 <div class="header-outer">
 <div class="container-lg">
-    <h1>🌩️ Bzzzzzt</h1>
+    <h1>✍️ VS Code Notes</h1>
 </div>
 </div>
 
 <div class="content-outer">
 <div class="container-lg">
-  <ul>
-<li><a href="https://github.com/bluefeet">GitHub</a></li>
-<li><a href="resume.pdf">Resume</a></li>
-<li><a href="https://metacpan.org/author/BLUEFEET">CPAN</a></li>
-<li><a href="http://www.youtube.com/watch?v=EIyixC9NsLI">Badgers</a>?</li>
-<li><a href="http://www.linkedin.com/in/bluefeet">LinkedIn</a></li>
-<li><a href="maze">Maze</a></li>
-</ul>
+  <h2 id="definition-of-a-workspace">Definition of a Workspace</h2>
+<p>Workspaces are a saved snapshot of the state of a Visual Studio Code window. This includes any workspace settings, unsaved buffers, extensions, terminal state, etc.</p>
+<h2 id="where-to-store-workspaces">Where to Store Workspaces</h2>
+<p>Do not save workspaces into project folders as other people working in the same project will be forced to use your exact settings and may modify your personal settings for that workspace.</p>
+<p>Instead, put workspaces into a local or remote folder only you have access to and is outside any particular project's path.</p>
+<p>Use <a href="#recommending-extensions">extension recommendations</a>, <a href="#declaring-tasks">tasks</a>, and <a href="editorconfig.html">.editorconfig</a> to declare project-level recommendations and settings.</p>
+<h2 id="recommending-extensions">Recommending Extensions</h2>
+<p>Declare <a href="https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions">recommended extensions</a> in project folders @ <code>.vscode/extensions.json</code>:</p>
+<pre><code class="language-json">{
+  <span class="hljs-comment">// https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions</span>
+  <span class="hljs-attr">"EditorConfig.editorconfig"</span>
+}</code></pre>
+<h2 id="declaring-tasks">Declaring Tasks</h2>
+<p>Declare project-specific <a href="https://code.visualstudio.com/docs/editor/tasks">tasks</a> in project folders @ <code>.vscode/tasks.json</code>:</p>
+<pre><code class="language-json">{
+  <span class="hljs-comment">// https://code.visualstudio.com/docs/editor/tasks</span>
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.0.0"</span>,
+  <span class="hljs-attr">"tasks"</span>: [
+    {
+      <span class="hljs-attr">"label"</span>: <span class="hljs-string">"build"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"shell"</span>,
+      <span class="hljs-attr">"command"</span>: <span class="hljs-string">"npm build"</span>
+    }
+  ]
+}</code></pre>
 
 </div>
 </div>
@@ -77,7 +94,7 @@
 <div class="container-lg">
   © 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a><br>
   Last modified: 2020-08-22<br>
-  This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bzzzzzt</span></strong>" is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.<br>
+  This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">VS Code Notes</span></strong>" is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.<br>
   Hosting provided by <a href="https://netlify.com/">Netlify</a>.
 </div>
 </div>
