@@ -1,6 +1,6 @@
 ---
 title: JS Spread and Rest
-icon: 🥡
+icon: 📦
 tags:
   - javascript
 ---
