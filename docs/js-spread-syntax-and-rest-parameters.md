@@ -1,6 +1,6 @@
 ---
 title: JS Spread Syntax and Rest Parameters
-icon: 🌳
+icon: 🧈
 tags:
   - javascript
 ---
