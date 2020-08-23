@@ -5,12 +5,31 @@ tags:
   - javascript
 ---
 
-The [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) takes an array or object and expands it into its elements.  So these two lines are identical:
+The [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) takes an array or object and expands it into its elements/properties.
+
+## Arrays and Spread Syntax
+
+These two lines are identical:
 
 ```js
 let foo = [ 1, 2, 3 ];
 let foo = [ ...[1, 2, 3] ];
 ```
+## Objects and Spread Syntax
+
+A shallow clone:
+
+```js
+const clone = { ...someObject };
+```
+
+Applying defaults:
+
+```js
+const args = { defKey: 'defVal', ...rawArgs };
+```
+
+## Rest Parameters
 
 [Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) are used to gather multiple arguments to a function into a single array.
 
@@ -18,6 +37,8 @@ let foo = [ ...[1, 2, 3] ];
 function bar (firstNum, ...nums) { /* nums is [2,3] */ }
 bar( 1, 2, 3 );
 ```
+
+## Cascading Inherited Arguments
 
 Spread syntax and rest parameters, together, provide the ability to cascade arguments:
 
@@ -28,8 +49,3 @@ function doThingA (firstArg, ...args) {
 }
 ```
 
-The spread syntax may be used with objects.  For example, a shallow clone:
-
-```js
-let clone = { ...someObject };
-```

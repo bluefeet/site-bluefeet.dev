@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>JS Spread Syntax and Rest Parameters</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/rainbow.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
       body {
@@ -18,25 +18,26 @@
       a:visited { color: rgb(17, 148, 209) }
       a:hover { color: rgb(170, 228, 255); text-decoration:none }
 
-      .header-outer {
-        background-color: rgb(0, 110, 161);
-        padding: 20px 0px;
+      .header {
+        background: rgb(7, 94, 165);
+        padding: 30px 0px 20px 0px;
       }
 
-      .content-outer {
-        background-color: #222;
-        padding: 20px 0px;
+      .content {
+        background: #222;
+        padding: 30px 0px 20px 0px;
       }
 
-      .footer-outer {
-        padding: 20px 20px;
+      .footer {
+        padding-top: 20px;
         font-size: 80%;
-        color: #bbb;
+        color: #aaa;
       }
 
       pre {
         border:solid 1px #555;
         background-color: #333;
+        font-family: 'Roboto Mono', monospace;
         color: #ddd;
         padding: 10px;
       }
@@ -46,6 +47,14 @@
         color: #ddd;
       }
 
+      h1, h2, h3 {
+        f-ont-family: 'Roboto Mono', monospace;
+      }
+      h2 {
+        color: #bbb;
+        border-bottom: solid 1px #444;
+      }
+
       th {
         border-bottom: solid 1px #888;
       }
@@ -53,37 +62,47 @@
   </head>
   <body>
 
-<div class="header-outer">
-<div class="container-lg">
+<div class="header"><div class="container-lg">
     <h1>🌳 JS Spread Syntax and Rest Parameters</h1>
-</div>
-</div>
+</div></div>
 
-<div class="content-outer">
-<div class="container-lg">
-  <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a> takes an array or object and expands it into its elements.  So these two lines are identical:</p>
+<div class="content"><div class="container-lg">
+  <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a> takes an array or object and expands it into its elements/properties.</p>
+<h2 id="arrays-and-spread-syntax">Arrays and Spread Syntax</h2>
+<p>These two lines are identical:</p>
 <pre><code class="language-js"><span class="hljs-keyword">let</span> foo = [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ];
 <span class="hljs-keyword">let</span> foo = [ ...[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] ];</code></pre>
+<h2 id="objects-and-spread-syntax">Objects and Spread Syntax</h2>
+<p>A shallow clone:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> clone = { ...someObject };</code></pre>
+<p>Applying defaults:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> args = { <span class="hljs-attr">defKey</span>: <span class="hljs-string">'defVal'</span>, ...rawArgs };</code></pre>
+<h2 id="rest-parameters">Rest Parameters</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">Rest parameters</a> are used to gather multiple arguments to a function into a single array.</p>
 <pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span> (<span class="hljs-params">firstNum, ...nums</span>) </span>{ <span class="hljs-comment">/* nums is [2,3] */</span> }
 bar( <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> );</code></pre>
+<h2 id="cascading-inherited-arguments">Cascading Inherited Arguments</h2>
 <p>Spread syntax and rest parameters, together, provide the ability to cascade arguments:</p>
 <pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doThingA</span> (<span class="hljs-params">firstArg, ...args</span>) </span>{
   firstArg = <span class="hljs-built_in">this</span>.modifyFirstArg( firstArg );
   <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.doThing( firstArg, ...args );
 }</code></pre>
-<p>The spread syntax may be used with objects.  For example, a shallow clone:</p>
-<pre><code class="language-js"><span class="hljs-keyword">let</span> clone = { ...someObject };</code></pre>
 
-</div>
-</div>
 
-<div class="footer-outer">
-<div class="container-lg">
+  <script src="https://utteranc.es/client.js"
+        repo="bluefeet/site-bluefeet.dev"
+        issue-term="title"
+        label="utterances"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+</div></div>
+
+<div class="footer"><div class="container-lg">
   This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">JS Spread Syntax and Rest Parameters</span></strong>" is <strong>©️ 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a></strong> is licensed under a <strong><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a></strong>.<br>
   It was <a href="https://github.com/bluefeet/site-bluefeet.dev/commits/master/docs/js-spread-syntax-and-rest-parameters.md">most recently modified</a> on <strong>2020-08-22</strong> and is hosted for free by <strong><a href="https://netlify.com/">Netlify</a></strong>. 🖖
-</div>
-</div>
+</div></div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

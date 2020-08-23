@@ -51,7 +51,7 @@ marked.setOptions({
 
 // Delete all .html files so only non-generated ones are deleted by the end of this build.
 console.log(
-  execSync( "git ls-files site | grep '.html$' | xargs rm").toString()
+  execSync( "find site -type f | grep '.html$' | xargs rm -f").toString()
 );
 
 for (const docsMdFile of files) {
@@ -77,6 +77,7 @@ for (const docsMdFile of files) {
   const cleanHtml = dompurify.sanitize( dirtyHtml );
 
   let pageHtml = pageTemplate({
+    utterance: true,
     docsMdFile,
     createYear,
     modifyDate,

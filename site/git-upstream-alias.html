@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Git Upstream Alias</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/rainbow.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
       body {
@@ -18,25 +18,26 @@
       a:visited { color: rgb(17, 148, 209) }
       a:hover { color: rgb(170, 228, 255); text-decoration:none }
 
-      .header-outer {
-        background-color: rgb(0, 110, 161);
-        padding: 20px 0px;
+      .header {
+        background: rgb(7, 94, 165);
+        padding: 30px 0px 20px 0px;
       }
 
-      .content-outer {
-        background-color: #222;
-        padding: 20px 0px;
+      .content {
+        background: #222;
+        padding: 30px 0px 20px 0px;
       }
 
-      .footer-outer {
-        padding: 20px 20px;
+      .footer {
+        padding-top: 20px;
         font-size: 80%;
-        color: #bbb;
+        color: #aaa;
       }
 
       pre {
         border:solid 1px #555;
         background-color: #333;
+        font-family: 'Roboto Mono', monospace;
         color: #ddd;
         padding: 10px;
       }
@@ -46,6 +47,14 @@
         color: #ddd;
       }
 
+      h1, h2, h3 {
+        f-ont-family: 'Roboto Mono', monospace;
+      }
+      h2 {
+        color: #bbb;
+        border-bottom: solid 1px #444;
+      }
+
       th {
         border-bottom: solid 1px #888;
       }
@@ -53,25 +62,28 @@
   </head>
   <body>
 
-<div class="header-outer">
-<div class="container-lg">
+<div class="header"><div class="container-lg">
     <h1>⬆️ Git Upstream Alias</h1>
-</div>
-</div>
+</div></div>
 
-<div class="content-outer">
-<div class="container-lg">
+<div class="content"><div class="container-lg">
   <p>The <code>@{u}</code> alias refers to the current branch’s upstream branch.  So, when on main, executing <code>git log @{u}</code> would typically be the same as <code>git log origin/main</code>.</p>
 
-</div>
-</div>
 
-<div class="footer-outer">
-<div class="container-lg">
+  <script src="https://utteranc.es/client.js"
+        repo="bluefeet/site-bluefeet.dev"
+        issue-term="title"
+        label="utterances"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+</div></div>
+
+<div class="footer"><div class="container-lg">
   This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Git Upstream Alias</span></strong>" is <strong>©️ 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a></strong> is licensed under a <strong><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a></strong>.<br>
   It was <a href="https://github.com/bluefeet/site-bluefeet.dev/commits/master/docs/git-upstream-alias.md">most recently modified</a> on <strong>2020-08-22</strong> and is hosted for free by <strong><a href="https://netlify.com/">Netlify</a></strong>. 🖖
-</div>
-</div>
+</div></div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
