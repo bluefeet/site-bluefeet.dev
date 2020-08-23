@@ -49,6 +49,11 @@ marked.setOptions({
   },
 });
 
+// Delete all .html files so only non-generated ones are deleted by the end of this build.
+console.log(
+  execSync( "git ls-files site | grep '.html$' | xargs rm").toString()
+);
+
 for (const docsMdFile of files) {
   const mdFile = path.join( 'docs', docsMdFile );
   const htmlFile = path.join( 'site', path.dirname( docsMdFile ), path.basename( docsMdFile, '.md' ) + '.html' );
@@ -81,3 +86,6 @@ for (const docsMdFile of files) {
 
   fs.writeFileSync( htmlFile, pageHtml );
 }
+
+console.log( 'Running: git add -A site' );
+execSync('git add -A site');
