@@ -18,9 +18,31 @@
       a:visited { color: rgb(17, 148, 209) }
       a:hover { color: rgb(170, 228, 255); text-decoration:none }
 
+      .nobr { white-space: nowrap }
+
       .header {
         background: rgb(7, 94, 165);
-        padding: 30px 0px 20px 0px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+      }
+
+      .icon {
+        font-size: 2.5rem;
+        float: right;
+        margin-right: 12px;
+      }
+
+      .menu {
+        word-spacing: 20px;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 120%;
+        background: #333;
+        background: rgb(35, 45, 59);
+        border-bottom: solid 1px rgb(78, 101, 133);
+      }
+
+      .menu div {
+        padding: 10px 40px;
       }
 
       .content {
@@ -29,8 +51,9 @@
       }
 
       .footer {
-        padding-top: 20px;
-        font-size: 80%;
+        border-top: solid 1px #666;
+        font-family: 'Roboto Mono', monospace;
+        padding: 40px;
         color: #aaa;
       }
 
@@ -49,6 +72,7 @@
       }
 
       h2 {
+        font-size: 1.8rem;
         color: #bbb;
         border-bottom: solid 1px #444;
       }
@@ -61,7 +85,15 @@
   <body>
 
 <div class="header"><div class="container-lg">
-    <h1>📑 EditorConfig</h1>
+    <span class="icon">📑</span>
+    <h1> EditorConfig</h1>
+</div></div>
+
+<div class="menu"><div class="container-lg">
+  <a href="/">&lt;-home</a>
+    <a href="/tags/devtool">#devtool</a>
+    <a href="/tags/editorconfig">#editorconfig</a>
+  &nbsp;
 </div></div>
 
 <div class="content"><div class="container-lg">
@@ -94,8 +126,7 @@ indent_size = 2</code></pre>
 </div></div>
 
 <div class="footer"><div class="container-lg">
-  This page "<strong><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">EditorConfig</span></strong>" is <strong>©️ 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a></strong> is licensed under a <strong><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a></strong>.<br>
-  It was <a href="https://github.com/bluefeet/site-bluefeet.dev/commits/master/docs/editorconfig.md">most recently modified</a> on <strong>2020-08-22</strong> and is hosted for free by <strong><a href="https://netlify.com/">Netlify</a></strong>. 🖖
+  This page "<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">EditorConfig</span>" is ©️ 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>, was <a href="https://github.com/bluefeet/site-bluefeet.dev/commits/master/docs/editorconfig.md">most recently modified</a> on <span class="nobr">2020-08-22</span>, and is hosted for free by <a href="https://netlify.com/">Netlify</a>. 🖖
 </div></div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

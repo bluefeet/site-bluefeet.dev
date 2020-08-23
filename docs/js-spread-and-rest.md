@@ -1,6 +1,6 @@
 ---
-title: JS Spread Syntax and Rest Parameters
-icon: 🧈
+title: JS Spread and Rest
+icon: 🦉
 tags:
   - javascript
 ---
@@ -26,7 +26,7 @@ const clone = { ...someObject };
 Applying defaults:
 
 ```js
-const args = { defKey: 'defVal', ...rawArgs };
+const args = { defKey: 'defVal', ...customArgs }; // Right side wins.
 ```
 
 ## Rest Parameters

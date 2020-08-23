@@ -72,12 +72,13 @@ for (const docsMdFile of files) {
   const [yaml, md] = parts ? [ parts[1], parts[2] ] : [undefined, raw];
 
   const meta = yaml ? jsyaml.safeLoad( yaml ) : {};
+  meta.tags = meta.tags ? meta.tags.sort() : [];
 
   const dirtyHtml = marked( md );
   const cleanHtml = dompurify.sanitize( dirtyHtml );
 
   let pageHtml = pageTemplate({
-    utterance: true,
+    showComments: true,
     docsMdFile,
     createYear,
     modifyDate,

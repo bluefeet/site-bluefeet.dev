@@ -2,6 +2,7 @@
 title: EditorConfig
 icon: 📑
 tags:
+  - devtool
   - editorconfig
 ---
 

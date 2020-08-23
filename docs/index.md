@@ -1,7 +1,8 @@
 ---
-title: Bzzzzzt
-icon: 🌩️
-utterance: false
+title: Home
+icon: 🏚️
+showComments: false
+isHome: true
 ---
 
 - [GitHub](https://github.com/bluefeet)

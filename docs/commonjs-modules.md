@@ -2,9 +2,8 @@
 title: CommonJS Modules
 icon: 🐚
 tags:
-  - JavaScript
-  - CommonJS
-  - Modules
+  - javascript
+  - commonjs
 ---
 
 Setup exports with the `module.exports` object:

@@ -2,8 +2,8 @@
 title: Zsh Cheatsheet
 icon: 📃
 tags:
-  - zsh
   - cheatsheet
+  - zsh
 ---
 
 | alias | command |

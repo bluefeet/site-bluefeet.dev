@@ -2,9 +2,8 @@
 title: ES6 Modules
 icon: 🥜
 tags:
-  - JavaScript
-  - CommonJS
-  - Modules
+  - javascript
+  - es6
 ---
 
 Export things:
