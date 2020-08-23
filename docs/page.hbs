@@ -67,16 +67,23 @@
 </div></div>
 
 <div class="content"><div class="container-lg">
-  {{& content}}
-
   {{#if utterance}}
-  <script src="https://utteranc.es/client.js"
-        repo="bluefeet/site-bluefeet.dev"
-        issue-term="title"
-        label="utterances"
-        theme="photon-dark"
-        crossorigin="anonymous"
-        async>
+    <div class="row">
+      <div class="col-lg-9">
+  {{/if}}
+        {{& content}}
+  {{#if utterance}}
+      </div>
+      <div class="col-lg-3">
+        <script src="https://utteranc.es/client.js"
+              repo="bluefeet/site-bluefeet.dev"
+              issue-term="title"
+              label="utterances"
+              theme="photon-dark"
+              crossorigin="anonymous"
+              async>
+        </div>
+    </div>
   {{/if}}
 </script>
 </div></div>

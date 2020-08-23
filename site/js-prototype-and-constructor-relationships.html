@@ -67,7 +67,9 @@
 </div></div>
 
 <div class="content"><div class="container-lg">
-  <p>Given:</p>
+    <div class="row">
+      <div class="col-lg-9">
+        <p>Given:</p>
 <pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Animal</span> (<span class="hljs-params"></span>) </span>{}
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Human</span> (<span class="hljs-params"></span>) </span>{}
 Human.prototype.__proto__ = Animal.prototype;
@@ -82,14 +84,17 @@ Human.prototype.__proto__ === Animal.prototype;
 Animal.prototype.constructor === Animal;
 Animal.prototype.__proto__ === <span class="hljs-built_in">Object</span>.prototype;</code></pre>
 
-
-  <script src="https://utteranc.es/client.js"
-        repo="bluefeet/site-bluefeet.dev"
-        issue-term="title"
-        label="utterances"
-        theme="photon-dark"
-        crossorigin="anonymous"
-        async>
+      </div>
+      <div class="col-lg-3">
+        <script src="https://utteranc.es/client.js"
+              repo="bluefeet/site-bluefeet.dev"
+              issue-term="title"
+              label="utterances"
+              theme="photon-dark"
+              crossorigin="anonymous"
+              async>
+        </div>
+    </div>
 </script>
 </div></div>
 
