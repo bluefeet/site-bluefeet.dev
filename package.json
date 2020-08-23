@@ -1,0 +1,12 @@
+{
+  "name": "site-bluefeet.dev",
+  "version": "1.0.0",
+  "dependencies": {
+    "dompurify": "^2.0.12",
+    "handlebars": "^4.7.6",
+    "highlight.js": "^10.1.2",
+    "js-yaml": "^3.14.0",
+    "jsdom": "^16.4.0",
+    "marked": "^1.1.1"
+  }
+}
