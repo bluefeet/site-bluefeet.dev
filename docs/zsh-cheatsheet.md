@@ -1,6 +1,6 @@
 ---
 title: Zsh Cheatsheet
-icon: 📃
+icon: 🦓
 tags:
   - cheatsheet
   - zsh

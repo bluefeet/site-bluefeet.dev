@@ -1,6 +1,7 @@
 ---
-title: Home
-icon: 🏚️
+title: bluefeet.dev
+subTitle: Where the Wookiee nerds out.
+icon: 🧙🏻‍♂️
 showComments: false
 isHome: true
 ---

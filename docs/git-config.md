@@ -1,6 +1,6 @@
 ---
 title: Git Config
-icon: 👾
+icon: 🐙
 tags:
   - git
   - shell
