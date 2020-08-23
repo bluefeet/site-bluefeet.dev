@@ -49,10 +49,10 @@ marked.setOptions({
   },
 });
 
-for (let mdFile of files) {
-  const htmlFile = path.join( 'site', path.dirname( mdFile ), path.basename( mdFile, '.md' ) + '.html' );
+for (const docsMdFile of files) {
+  const mdFile = path.join( 'docs', docsMdFile );
+  const htmlFile = path.join( 'site', path.dirname( docsMdFile ), path.basename( docsMdFile, '.md' ) + '.html' );
   console.log(`Generating: ${htmlFile}`);
-  mdFile = path.join( 'docs', mdFile );
 
   const logLines = execSync(
     `git log --pretty=format:"%as" -- ${mdFile}`,
@@ -72,6 +72,7 @@ for (let mdFile of files) {
   const cleanHtml = dompurify.sanitize( dirtyHtml );
 
   let pageHtml = pageTemplate({
+    docsMdFile,
     createYear,
     modifyDate,
     content: cleanHtml,
