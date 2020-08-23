@@ -1,6 +1,6 @@
 ---
 title: JS for Loops
-icon: 🧶
+icon: 🧵
 tags:
   - javascript
 ---
@@ -17,7 +17,7 @@ Iterating over elements in an array using [forEach](https://developer.mozilla.or
 things.forEach( thing => { /* ... */ } );
 ```
 
-Iterating over elements in an array in the [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for):
+Iterating over elements in an array using [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for):
 
 ```js
 for (let i=0; i<things.length; i++) { /* ... */ }
@@ -26,7 +26,7 @@ for (let i=0; i<things.length; i++) { /* ... */ }
 Iterate over the properties in an object using [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):
 
 ```js
-for (const property of thing) { /* ... */ }
+for (const property in thing) { /* ... */ }
 ```
 
 Iterate over the properties in an object using [Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) and [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach):

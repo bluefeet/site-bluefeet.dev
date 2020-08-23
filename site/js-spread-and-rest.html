@@ -27,8 +27,16 @@
         padding-top: 0px;
       }
 
-      h1 { margin-bottom:0px; padding-top:20px }
-      .subTitle { color:#bbb; font-size:90% }
+      h1 {
+        margin-bottom: 0px;
+        padding-top: 20px;
+      }
+      
+      .subTitle {
+        color: #bbb;
+        font-size: 90%;
+        font-family: 'Roboto Mono', monospace;
+      }
 
       .icon {
         padding-top: 8px;
@@ -104,15 +112,14 @@
 <div class="content"><div class="container-lg">
     <div class="row">
       <div class="col-lg-8">
-        <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a> takes an array or object and expands it into its elements/properties.</p>
-<h2 id="arrays-and-spread-syntax">Arrays and Spread Syntax</h2>
+        <h2 id="spread-syntax">Spread Syntax</h2>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a> takes an array or object and expands it into its elements/properties.</p>
 <p>These two lines are identical:</p>
 <pre><code class="language-js"><span class="hljs-keyword">let</span> foo = [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ];
 <span class="hljs-keyword">let</span> foo = [ ...[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] ];</code></pre>
-<h2 id="objects-and-spread-syntax">Objects and Spread Syntax</h2>
-<p>A shallow clone:</p>
+<p>A shallow clone of an object:</p>
 <pre><code class="language-js"><span class="hljs-keyword">const</span> clone = { ...someObject };</code></pre>
-<p>Applying defaults:</p>
+<p>Building arguments with defaults:</p>
 <pre><code class="language-js"><span class="hljs-keyword">const</span> args = { <span class="hljs-attr">defKey</span>: <span class="hljs-string">'defVal'</span>, ...customArgs }; <span class="hljs-comment">// Right side wins.</span></code></pre>
 <h2 id="rest-parameters">Rest Parameters</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">Rest parameters</a> are used to gather multiple arguments to a function into a single array.</p>

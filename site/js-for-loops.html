@@ -27,8 +27,16 @@
         padding-top: 0px;
       }
 
-      h1 { margin-bottom:0px; padding-top:20px }
-      .subTitle { color:#bbb; font-size:90% }
+      h1 {
+        margin-bottom: 0px;
+        padding-top: 20px;
+      }
+      
+      .subTitle {
+        color: #bbb;
+        font-size: 90%;
+        font-family: 'Roboto Mono', monospace;
+      }
 
       .icon {
         padding-top: 8px;
@@ -90,7 +98,7 @@
   <body>
 
 <div class="header"><div class="container-lg">
-    <span class="icon">🧶</span>
+    <span class="icon">🧵</span>
     <h1> JS for Loops</h1>
     <span class="subTitle">0x000000</span>
 </div></div>
@@ -108,10 +116,10 @@
 <pre><code class="language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> thing <span class="hljs-keyword">of</span> things) { <span class="hljs-comment">/* ... */</span> }</code></pre>
 <p>Iterating over elements in an array using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>:</p>
 <pre><code class="language-js">things.forEach( <span class="hljs-function"><span class="hljs-params">thing</span> =&gt;</span> { <span class="hljs-comment">/* ... */</span> } );</code></pre>
-<p>Iterating over elements in an array in the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for</a>:</p>
+<p>Iterating over elements in an array using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for</a>:</p>
 <pre><code class="language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i&lt;things.length; i++) { <span class="hljs-comment">/* ... */</span> }</code></pre>
 <p>Iterate over the properties in an object using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">for...in</a>:</p>
-<pre><code class="language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> property <span class="hljs-keyword">of</span> thing) { <span class="hljs-comment">/* ... */</span> }</code></pre>
+<pre><code class="language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> property <span class="hljs-keyword">in</span> thing) { <span class="hljs-comment">/* ... */</span> }</code></pre>
 <p>Iterate over the properties in an object using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">Object.keys()</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>:</p>
 <pre><code class="language-js"><span class="hljs-built_in">Object</span>.keys( thing ).forEach( <span class="hljs-function"><span class="hljs-params">property</span> =&gt;</span> { <span class="hljs-comment">/* ... */</span> });</code></pre>
 

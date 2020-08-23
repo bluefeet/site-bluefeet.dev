@@ -5,9 +5,9 @@ tags:
   - javascript
 ---
 
-The [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) takes an array or object and expands it into its elements/properties.
+## Spread Syntax
 
-## Arrays and Spread Syntax
+The [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) takes an array or object and expands it into its elements/properties.
 
 These two lines are identical:
 
@@ -15,15 +15,13 @@ These two lines are identical:
 let foo = [ 1, 2, 3 ];
 let foo = [ ...[1, 2, 3] ];
 ```
-## Objects and Spread Syntax
-
-A shallow clone:
+A shallow clone of an object:
 
 ```js
 const clone = { ...someObject };
 ```
 
-Applying defaults:
+Building arguments with defaults:
 
 ```js
 const args = { defKey: 'defVal', ...customArgs }; // Right side wins.
@@ -48,4 +46,3 @@ function doThingA (firstArg, ...args) {
   return this.doThing( firstArg, ...args );
 }
 ```
-
