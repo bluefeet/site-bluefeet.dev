@@ -8,5 +8,8 @@
     "js-yaml": "^3.14.0",
     "jsdom": "^16.4.0",
     "marked": "^1.1.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
   }
 }
