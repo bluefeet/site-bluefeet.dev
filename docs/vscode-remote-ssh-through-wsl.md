@@ -7,7 +7,7 @@ tags:
   - wsl
 ---
 
-Create `C:\\wsl-ssh\\wsl-ssh.cmd`:
+Create `C:\wsl-ssh\wsl-ssh.cmd`:
 
 ```shell
 wsl ssh %*

@@ -1,5 +1,5 @@
 ---
-title: JS Spread and Rest
+title: JavaScript Spread Syntax and Rest Parameters
 icon: 📦
 tags:
   - javascript

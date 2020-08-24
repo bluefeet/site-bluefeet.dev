@@ -1,6 +1,6 @@
 ---
-title: JS Object Initializer Notation
-icon: ✒️
+title: JavaScript Object Initializer Notation
+icon: 💈
 tags:
   - javascript
 ---

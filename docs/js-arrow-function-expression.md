@@ -1,5 +1,5 @@
 ---
-title: JS Arrow Function Expression
+title: JavaScript Arrow Function Expression
 icon: 😜
 tags:
   - javascript

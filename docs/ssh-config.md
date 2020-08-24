@@ -1,6 +1,6 @@
 ---
 title: SSH Config
-icon: 🔇
+icon: 🚎
 tags:
   - ssh
 ---

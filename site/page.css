@@ -1,0 +1,102 @@
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'Roboto', sans-serif;
+}
+
+a { color: rgb(106, 208, 255) }
+a:visited { color: rgb(17, 148, 209) }
+a:hover { color: rgb(170, 228, 255); text-decoration:none }
+
+.nobr { white-space: nowrap }
+
+.header {
+  background: rgb(7,94,165);
+  background: linear-gradient(180deg, rgba(7,94,165,1) 0%, rgba(7,82,144,1) 100%);        padding-top: 30px;
+  padding-bottom: 20px;
+  padding-top: 0px;
+}
+
+h1 {
+  margin-bottom: 0px;
+  padding-top: 20px;
+}
+
+.subTitle {
+  color: #bbb;
+  font-size: 90%;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.icon {
+  padding: 8px 10px 8px 14px;
+  font-size: 4rem;
+  float: right;
+}
+
+.menu {
+  word-spacing: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 120%;
+  background: #333;
+  background: rgb(35, 45, 59);
+  border-bottom: solid 1px rgb(78, 101, 133);
+}
+
+.menu div {
+  padding: 10px 40px;
+}
+
+.content {
+  background: #222;
+  padding: 30px 0px 20px 0px;
+}
+
+.footer {
+  border-top: solid 1px #666;
+  font-family: 'Roboto Mono', monospace;
+  padding: 40px;
+  color: #aaa;
+}
+
+pre {
+  border:solid 1px #555;
+  border-radius: 10px;
+  background-color: #333;
+  font-family: 'Roboto Mono', monospace;
+  color: #ddd;
+  padding: 10px;
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+  color: #ddd;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #bbb;
+}
+
+th {
+  border-bottom: solid 1px #888;
+}
+
+.doc-tile {
+  border: solid 1px #333;
+  padding: 10px;
+  background-color: #181818;
+  border-radius: 10px;
+}
+.doc-tile-icon {
+  font-size: 250%;
+  display: inline;
+}
+.doc-tile-title {
+  font-size: 120%;
+  display: inline;
+}
+.doc-tile-date {
+  font-family: 'Roboto Mono', monospace;
+  float: right;
+}

@@ -1,5 +1,5 @@
 ---
-title: JS Prototype and Constructor Inheritance
+title: JavaScript Prototype and Constructor Inheritance
 icon: 👨‍👩‍👧‍👦
 tags:
   - javascript

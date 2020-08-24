@@ -1,5 +1,5 @@
 ---
-title: JS Multiple Variable Assignment
+title: JavaScript Multiple Variable Assignment
 icon: 🌗
 tags:
   - javascript

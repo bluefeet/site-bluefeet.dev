@@ -6,94 +6,8 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/rainbow.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-color: #111;
-        color: #eee;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      a { color: rgb(106, 208, 255) }
-      a:visited { color: rgb(17, 148, 209) }
-      a:hover { color: rgb(170, 228, 255); text-decoration:none }
-
-      .nobr { white-space: nowrap }
-
-      .header {
-        background: rgb(7,94,165);
-        background: linear-gradient(180deg, rgba(7,94,165,1) 0%, rgba(7,82,144,1) 100%);        padding-top: 30px;
-        padding-bottom: 20px;
-        padding-top: 0px;
-      }
-
-      h1 {
-        margin-bottom: 0px;
-        padding-top: 20px;
-      }
-      
-      .subTitle {
-        color: #bbb;
-        font-size: 90%;
-        font-family: 'Roboto Mono', monospace;
-      }
-
-      .icon {
-        padding-top: 8px;
-        font-size: 4rem;
-        float: right;
-        margin-right: 12px;
-      }
-
-      .menu {
-        word-spacing: 20px;
-        font-family: 'Roboto Mono', monospace;
-        font-size: 120%;
-        background: #333;
-        background: rgb(35, 45, 59);
-        border-bottom: solid 1px rgb(78, 101, 133);
-      }
-
-      .menu div {
-        padding: 10px 40px;
-      }
-
-      .content {
-        background: #222;
-        padding: 30px 0px 20px 0px;
-      }
-
-      .footer {
-        border-top: solid 1px #666;
-        font-family: 'Roboto Mono', monospace;
-        padding: 40px;
-        color: #aaa;
-      }
-
-      pre {
-        border:solid 1px #555;
-        border-radius: 10px;
-        background-color: #333;
-        font-family: 'Roboto Mono', monospace;
-        color: #ddd;
-        padding: 10px;
-      }
-
-      code {
-        font-family: 'Roboto Mono', monospace;
-        color: #ddd;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        color: #bbb;
-        border-bottom: solid 1px #444;
-      }
-
-      th {
-        border-bottom: solid 1px #888;
-      }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="/page.css">
   </head>
   <body>
 
@@ -105,9 +19,11 @@
 
 <div class="menu"><div class="container-lg">
   <a href="/">{{#if isHome}}@{{else}}&lt;-{{/if}}home</a>
+<!--
   {{#each tags}}
     <a href="/tags/{{this}}">#{{this}}</a>
   {{/each}}
+-->
   &nbsp;
 </div></div>
 

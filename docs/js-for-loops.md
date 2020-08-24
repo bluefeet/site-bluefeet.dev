@@ -1,5 +1,5 @@
 ---
-title: JS for Loops
+title: JavaScript for Loops
 icon: 🧵
 tags:
   - javascript

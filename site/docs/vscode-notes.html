@@ -6,94 +6,8 @@
     <title>VS Code Notes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/rainbow.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-color: #111;
-        color: #eee;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      a { color: rgb(106, 208, 255) }
-      a:visited { color: rgb(17, 148, 209) }
-      a:hover { color: rgb(170, 228, 255); text-decoration:none }
-
-      .nobr { white-space: nowrap }
-
-      .header {
-        background: rgb(7,94,165);
-        background: linear-gradient(180deg, rgba(7,94,165,1) 0%, rgba(7,82,144,1) 100%);        padding-top: 30px;
-        padding-bottom: 20px;
-        padding-top: 0px;
-      }
-
-      h1 {
-        margin-bottom: 0px;
-        padding-top: 20px;
-      }
-      
-      .subTitle {
-        color: #bbb;
-        font-size: 90%;
-        font-family: 'Roboto Mono', monospace;
-      }
-
-      .icon {
-        padding-top: 8px;
-        font-size: 4rem;
-        float: right;
-        margin-right: 12px;
-      }
-
-      .menu {
-        word-spacing: 20px;
-        font-family: 'Roboto Mono', monospace;
-        font-size: 120%;
-        background: #333;
-        background: rgb(35, 45, 59);
-        border-bottom: solid 1px rgb(78, 101, 133);
-      }
-
-      .menu div {
-        padding: 10px 40px;
-      }
-
-      .content {
-        background: #222;
-        padding: 30px 0px 20px 0px;
-      }
-
-      .footer {
-        border-top: solid 1px #666;
-        font-family: 'Roboto Mono', monospace;
-        padding: 40px;
-        color: #aaa;
-      }
-
-      pre {
-        border:solid 1px #555;
-        border-radius: 10px;
-        background-color: #333;
-        font-family: 'Roboto Mono', monospace;
-        color: #ddd;
-        padding: 10px;
-      }
-
-      code {
-        font-family: 'Roboto Mono', monospace;
-        color: #ddd;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        color: #bbb;
-        border-bottom: solid 1px #444;
-      }
-
-      th {
-        border-bottom: solid 1px #888;
-      }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="/page.css">
   </head>
   <body>
 
@@ -105,7 +19,9 @@
 
 <div class="menu"><div class="container-lg">
   <a href="/">&lt;-home</a>
+<!--
     <a href="/tags/vscode">#vscode</a>
+-->
   &nbsp;
 </div></div>
 
@@ -116,24 +32,24 @@
 <p>Workspaces are a saved snapshot of the state of a Visual Studio Code window. This includes any workspace settings, unsaved buffers, extensions, terminal state, etc.</p>
 <h2 id="where-to-store-workspaces">Where to Store Workspaces</h2>
 <p>Do not save workspaces into project folders as other people working in the same project will be forced to use your exact settings and may modify your personal settings for that workspace.</p>
-<p>Instead, put workspaces into a local or remote folder only you have access to and is outside any particular project's path.</p>
+<p>Instead, put workspaces into a local or remote folder only you have access to and is outside any particular project&#39;s path.</p>
 <p>Use <a href="#recommending-extensions">extension recommendations</a>, <a href="#declaring-tasks">tasks</a>, and <a href="editorconfig.html">.editorconfig</a> to declare project-level recommendations and settings.</p>
 <h2 id="recommending-extensions">Recommending Extensions</h2>
 <p>Declare <a href="https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions">recommended extensions</a> in project folders @ <code>.vscode/extensions.json</code>:</p>
 <pre><code class="language-json">{
   <span class="hljs-comment">// https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions</span>
-  <span class="hljs-attr">"EditorConfig.editorconfig"</span>
+  <span class="hljs-attr">&quot;EditorConfig.editorconfig&quot;</span>
 }</code></pre>
 <h2 id="declaring-tasks">Declaring Tasks</h2>
 <p>Declare project-specific <a href="https://code.visualstudio.com/docs/editor/tasks">tasks</a> in project folders @ <code>.vscode/tasks.json</code>:</p>
 <pre><code class="language-json">{
   <span class="hljs-comment">// https://code.visualstudio.com/docs/editor/tasks</span>
-  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.0.0"</span>,
-  <span class="hljs-attr">"tasks"</span>: [
+  <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;2.0.0&quot;</span>,
+  <span class="hljs-attr">&quot;tasks&quot;</span>: [
     {
-      <span class="hljs-attr">"label"</span>: <span class="hljs-string">"build"</span>,
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"shell"</span>,
-      <span class="hljs-attr">"command"</span>: <span class="hljs-string">"npm build"</span>
+      <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;build&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;shell&quot;</span>,
+      <span class="hljs-attr">&quot;command&quot;</span>: <span class="hljs-string">&quot;npm build&quot;</span>
     }
   ]
 }</code></pre>
@@ -153,7 +69,7 @@
 </div></div>
 
 <div class="footer"><div class="container-lg">
-  This page "<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">VS Code Notes</span>" is ©️ 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>, was <a href="https://github.com/bluefeet/site-bluefeet.dev/commits/master/docs/vscode-notes.md">most recently modified</a> on <span class="nobr">2020-08-22</span>, and is hosted for free by <a href="https://netlify.com/">Netlify</a>. 🖖
+  This page "<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">VS Code Notes</span>" is ©️ 2020 <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>, was <a href="https://github.com/bluefeet/site-bluefeet.dev/commits/master/docs/">most recently modified</a> on <span class="nobr">2020-08-22</span>, and is hosted for free by <a href="https://netlify.com/">Netlify</a>. 🖖
 </div></div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

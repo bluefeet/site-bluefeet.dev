@@ -1,47 +1,29 @@
 #!/usr/bin/env node
 const marked = require('marked');
-const newDompurify = require('dompurify');
-const { JSDOM } = require('jsdom');
-const window = new JSDOM('').window;
-const dompurify = newDompurify( window );
 const handlebars = require('handlebars');
 const highlight = require('highlight.js');
 const jsyaml = require('js-yaml');
 const path = require('path');
 const fs = require('fs');
-const util = require('util');
 const { execSync } = require('child_process');
 
-const fileRe = /\.md$/;
-const files = [];
-const dirs = ['.'];
+execSync( 'rm -rf site/docs/*' );
 
-process.chdir('docs');
-
-while (dirs.length) {
-  const dir = dirs.shift();
-  const things = fs.readdirSync( dir );
-
-  for (const thing of things) {
-    const thingPath = path.join(dir, thing);
-    const stat = fs.statSync( thingPath );
-
-    if (stat.isDirectory()) {
-      dirs.push( thingPath );
-    }
-    else if (stat.isFile() && fileRe.exec(thing)) {
-      console.log(`Found: docs/${thingPath}`);
-      files.push( thingPath );
-    }
-  }
+const files = fs.readdirSync( 'docs' ).sort();
+const docs = [];
+for (const file of files) {
+  docs.push( loadDoc( file ) );
 }
 
-process.chdir('..');
+docs.sort( (a,b) => {
+  if (a.modifyEpoch == b.modifyEpoch) {
+    return a.title > b.title ? 1 : -1;
+  }
+  return a.modifyEpoch < b.modifyEpoch ? 1 : -1;
+});
 
-const pageRaw = fs.readFileSync( 'docs/page.hbs' ).toString();
+const pageRaw = fs.readFileSync( 'page.hbs' ).toString();
 const pageTemplate = handlebars.compile( pageRaw );
-
-const frontMatterRe = /^---\n(.*)\n---\n(.*)$/s;
 
 marked.setOptions({
   highlight: function (code, lang) {
@@ -49,45 +31,60 @@ marked.setOptions({
   },
 });
 
-// Delete all .html files so only non-generated ones are deleted by the end of this build.
-console.log(
-  execSync( "find site -type f | grep '.html$' | xargs rm -f").toString()
-);
+for (const doc of docs) {
+  console.log( `Generating: ${doc.htmlFile}` );
 
-for (const docsMdFile of files) {
-  const mdFile = path.join( 'docs', docsMdFile );
-  const htmlFile = path.join( 'site', path.dirname( docsMdFile ), path.basename( docsMdFile, '.md' ) + '.html' );
-  console.log(`Generating: ${htmlFile}`);
+  fs.mkdirSync( path.dirname( doc.htmlFile ), {recursive:true} );
+  
+  const mdTemplate = handlebars.compile( doc.md );
+  const finalMd = mdTemplate({
+    showComments: true,
+    ...doc,
+    docs,
+  });
+  
+  const mdHtml = marked( finalMd );
 
-  const logLines = execSync(
-    `git log --pretty=format:"%as" -- ${mdFile}`,
-  ).toString().split("\n");
-  const createYear = logLines[ logLines.length - 1 ].split("-")[0];
-  const modifyDate = logLines[0];
+  const pageHtml = pageTemplate({
+    showComments: true,
+    ...doc,
+    docs,
+    content: mdHtml,
+  });
 
-  fs.mkdirSync( path.dirname( htmlFile ), {recursive:true} );
+  fs.writeFileSync( doc.htmlFile, pageHtml );
+}
+
+console.log( 'Running: git add -A site/docs' );
+execSync('git add -A site/docs');
+
+function loadDoc (file) {
+  const mdFile = path.join( 'docs', file );
+  console.log( `Loading: ${mdFile}` );
+
+  const frontMatterRe = /^---\n(.*)\n---\n(.*)$/s;
 
   const raw = fs.readFileSync( mdFile ).toString();
   const parts = frontMatterRe.exec( raw );
   const [yaml, md] = parts ? [ parts[1], parts[2] ] : [undefined, raw];
-
   const meta = yaml ? jsyaml.safeLoad( yaml ) : {};
+
+  meta.md = md;
   meta.tags = meta.tags ? meta.tags.sort() : [];
 
-  const dirtyHtml = marked( md );
-  const cleanHtml = dompurify.sanitize( dirtyHtml );
+  meta.urlPath = meta.urlPath || path.join( path.dirname( mdFile ), path.basename( mdFile, '.md' ) + '.html' );
+  meta.htmlFile = path.join( 'site', meta.urlPath );
 
-  let pageHtml = pageTemplate({
-    showComments: true,
-    docsMdFile,
-    createYear,
-    modifyDate,
-    content: cleanHtml,
-    ...meta,
-  });
+  let logLines = execSync(
+    `git log --pretty=format:"%as" -- ${mdFile}`,
+  ).toString().split("\n");
+  meta.createYear = logLines[ logLines.length - 1 ].split("-")[0];
+  meta.modifyDate = logLines[0];
 
-  fs.writeFileSync( htmlFile, pageHtml );
+  logLines = execSync(
+    `git log --pretty=format:"%at" -- ${mdFile}`,
+  ).toString().split("\n");
+  meta.modifyEpoch = logLines[0];
+
+  return meta;
 }
-
-console.log( 'Running: git add -A site' );
-execSync('git add -A site');
