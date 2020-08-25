@@ -1,6 +1,6 @@
 ---
 title: JavaScript Prototype and Constructor Inheritance
-icon: 👨‍👩‍👧‍👦
+icon: 🦖
 tags:
   - javascript
   - inheritance

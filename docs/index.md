@@ -7,12 +7,10 @@ isHome: true
 urlPath: index.html
 ---
 
-## Docs by Modification Date
-
 <div class="row row-cols-1 row-cols-lg-2">
 {{#each docs}}
   <div class="col">
-    <a href="{{urlPath}}">
+    <a href="{{urlPath}}" class="doc-a">
       <div class="row doc-tile">
         <div class="col-auto doc-tile-icon">{{icon}}</div>
         <div class="col doc-tile-title">{{title}}</div>

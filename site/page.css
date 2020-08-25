@@ -88,6 +88,10 @@ th {
   background-color: #181818;
   border-radius: 10px;
 }
+.doc-tile:hover {
+  border: solid 1px #444;
+  background-color: #222;
+}
 .doc-tile-icon {
   font-size: 250%;
   display: inline;
