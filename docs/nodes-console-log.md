@@ -1,6 +1,6 @@
 ---
 title: Node's console.log
-icon: 🧻
+icon: 📋
 tags:
   - javascript
   - node

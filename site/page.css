@@ -2,6 +2,7 @@ body {
   background-color: #111;
   color: #eee;
   font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
 }
 
 a { color: rgb(106, 208, 255) }
@@ -82,7 +83,6 @@ th {
   border: solid 5px #222;
   padding: 10px;
   background-color: #181818;
-  min-height: 8rem;
 }
 .doc-tile:hover {
   border: solid 5px #444;
@@ -90,7 +90,7 @@ th {
 }
 .doc-tile-icon {
   font-size: 250%;
-  width: 5rem;
+  width: 3.5rem;
 }
 .doc-tile-title {
   font-size: 120%;
