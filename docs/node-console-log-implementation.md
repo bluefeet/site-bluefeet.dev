@@ -1,5 +1,5 @@
 ---
-title: Node console.log Implementation
+title: Node's console.log Implementation
 icon: 🧻
 tags:
   - javascript
