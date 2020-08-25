@@ -1,6 +1,6 @@
 ---
 title: Renaming a Symbol in Visual Studio Code
-icon: ♻️
+icon: 🔨
 tags:
   - vscode
 ---

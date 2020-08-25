@@ -1,5 +1,5 @@
 ---
-title: Remote SSH through WSL in VS Code
+title: Remote SSH through WSL in Visual Studio Code
 icon: 🏝️
 tags:
   - ssh

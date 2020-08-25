@@ -1,5 +1,5 @@
 ---
-title: VS Code Notes
+title: Visual Studio Code Notes
 icon: ✍️
 tags:
   - vscode
@@ -23,7 +23,6 @@ Declare [recommended extensions](https://code.visualstudio.com/docs/editor/exten
 
 ```json
 {
-  // https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions
   "EditorConfig.editorconfig"
 }
 ```
@@ -34,7 +33,6 @@ Declare project-specific [tasks](https://code.visualstudio.com/docs/editor/tasks
 
 ```json
 {
-  // https://code.visualstudio.com/docs/editor/tasks
   "version": "2.0.0",
   "tasks": [
     {
