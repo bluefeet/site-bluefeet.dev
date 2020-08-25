@@ -38,9 +38,7 @@ h1 {
   word-spacing: 20px;
   font-family: 'Roboto Mono', monospace;
   font-size: 120%;
-  background: #333;
-  background: rgb(35, 45, 59);
-  border-bottom: solid 1px rgb(78, 101, 133);
+  background: rgb(3, 44, 78);
 }
 
 .menu div {
@@ -60,8 +58,6 @@ h1 {
 }
 
 pre {
-  border:solid 1px #555;
-  border-radius: 10px;
   background-color: #333;
   font-family: 'Roboto Mono', monospace;
   color: #ddd;
@@ -83,24 +79,23 @@ th {
 }
 
 .doc-tile {
-  border: solid 1px #333;
+  border: solid 5px #222;
   padding: 10px;
   background-color: #181818;
-  border-radius: 10px;
 }
 .doc-tile:hover {
-  border: solid 1px #444;
+  border: solid 5px #444;
   background-color: #222;
 }
 .doc-tile-icon {
   font-size: 250%;
-  display: inline;
 }
 .doc-tile-title {
   font-size: 120%;
-  display: inline;
 }
 .doc-tile-date {
   font-family: 'Roboto Mono', monospace;
-  float: right;
+}
+.doc-a .doc-tile-date {
+  color: #888;
 }

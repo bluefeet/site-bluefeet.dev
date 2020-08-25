@@ -9,7 +9,7 @@ urlPath: index.html
 
 <div class="row row-cols-1 row-cols-lg-2">
 {{#each docs}}
-  <div class="col">
+  <div class="col doc-col">
     <a href="{{urlPath}}" class="doc-a">
       <div class="row doc-tile">
         <div class="col-auto doc-tile-icon">{{icon}}</div>

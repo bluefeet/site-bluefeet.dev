@@ -11,12 +11,6 @@
   </head>
   <body>
 
-<div class="header"><div class="container-lg">
-    <span class="icon">{{icon}}</span>
-    <h1> {{title}}</h1>
-    <span class="subTitle">{{#if subTitle}}{{subTitle}}{{else}}0x000000{{/if}}</span>
-</div></div>
-
 <div class="menu"><div class="container-lg">
   <a href="/">{{#if isHome}}@{{else}}&lt;-{{/if}}home</a>
 <!--
@@ -25,6 +19,12 @@
   {{/each}}
 -->
   &nbsp;
+</div></div>
+
+<div class="header"><div class="container-lg">
+    <span class="icon">{{icon}}</span>
+    <h1> {{title}}</h1>
+    <span class="subTitle">{{#if subTitle}}{{subTitle}}{{else}}0x000000{{/if}}</span>
 </div></div>
 
 <div class="content"><div class="container-lg">
