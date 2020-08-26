@@ -7,14 +7,14 @@ isHome: true
 urlPath: index.html
 ---
 
-<div class="row row-cols-1 row-cols-lg-2">
+<div class="row row-cols-1 row-cols-md-2 doc-row">
 {{#each docs}}{{#unless isHome}}
   <div class="col doc-col">
     <a href="{{urlPath}}" class="doc-a">
-      <div class="row doc-tile">
-        <div class="col-auto doc-tile-icon">{{icon}}</div>
-        <div class="col doc-tile-title">{{title}}</div>
-        <div class="col-auto doc-tile-date">{{modifyDate}}</div>
+      <div class="doc">
+        <div class="doc-icon">{{icon}}</div>
+        <div class="doc-title">{{title}}</div>
+        <div class="doc-date">{{modifyDate}}</div>
       </div>
     </a>
   </div>

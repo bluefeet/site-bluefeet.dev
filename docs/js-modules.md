@@ -1,10 +1,27 @@
 ---
-title: ES6 Modules
+title: JavaScript Modules
 icon: 🥜
 tags:
   - javascript
+  - commmonjs
   - es6
 ---
+
+## CommonJS
+
+Setup exports with the `module.exports` object:
+
+```js
+module.exports = { someFunc1, someFunc2 };
+```
+
+Import a module with the `require` function:
+
+```js
+let { someFunc1 } = require('path/to/module');
+```
+
+## ES6
 
 Export things:
 

@@ -2,7 +2,6 @@ body {
   background-color: #111;
   color: #eee;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.8rem;
 }
 
 a { color: rgb(106, 208, 255) }
@@ -11,52 +10,67 @@ a:hover { color: rgb(170, 228, 255); text-decoration:none }
 
 .nobr { white-space: nowrap }
 
-.header {
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+}
+
+/* HEADER */
+
+.header-outer {
   background: rgb(7,94,165);
-  background: linear-gradient(180deg, rgba(7,94,165,1) 0%, rgba(7,82,144,1) 100%);        padding-top: 30px;
-  padding-bottom: 20px;
-  padding-top: 0px;
 }
-
-h1 {
-  margin-bottom: 0px;
-  padding-top: 20px;
+.header-container {
+  h-eight: 5.5rem;
+  padding-bottom: 10px;
 }
-
-.subTitle {
-  color: #bbb;
-  font-size: 90%;
-  font-family: 'Roboto Mono', monospace;
-}
-
-.icon {
-  padding: 8px 10px 8px 14px;
-  font-size: 4rem;
+.header-icon {
+  padding-left: 10px;
+  font-size: 3.5rem;
   float: right;
 }
+h1 {
+  padding-top: 1.2rem;
+}
 
-.menu {
-  word-spacing: 20px;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 120%;
+/* MENU */
+
+.menu-outer {
   background: rgb(3, 44, 78);
 }
-
-.menu div {
-  padding: 10px 40px;
-}
-
-.content {
-  background: #222;
-  padding: 30px 0px 20px 0px;
-}
-
-.footer {
-  border-top: solid 1px #666;
+.menu-container {
   font-family: 'Roboto Mono', monospace;
-  padding: 40px;
+  font-size: 1.2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.menu-container a {
+  padding-right: 10px;
+}
+
+/* CONTENT */
+
+.content-outer {
+  background: #222;
+  border: solid 1px #666;
+  border-width: 1px 0px;
+}
+.content-container {
+  padding: 20px 10px;
+}
+
+/* FOOTER */
+
+.footer-container {
+  font-family: 'Roboto Mono', monospace;
+  padding: 30px;
+  font-size: 0.9rem;
   color: #aaa;
 }
+
+/* OTHER */
 
 pre {
   background-color: #333;
@@ -73,31 +87,18 @@ code {
 h2 {
   font-size: 1.8rem;
   color: #bbb;
+  border-bottom: dashed 2px #555;
 }
 
 th {
   border-bottom: solid 1px #888;
 }
 
-.doc-tile {
-  border: solid 5px #222;
-  padding: 10px;
-  background-color: #181818;
-}
-.doc-tile:hover {
-  border: solid 5px #444;
-  background-color: #222;
-}
-.doc-tile-icon {
-  font-size: 250%;
-  width: 3.5rem;
-}
-.doc-tile-title {
-  font-size: 120%;
-}
-.doc-tile-date {
-  font-family: 'Roboto Mono', monospace;
-}
-.doc-a .doc-tile-date {
-  color: #888;
-}
+/* DOCS */
+
+.doc { background-color: #111 }
+.doc:hover { background-color: #333 }
+.doc-icon { float:left; font-size:2.5em; padding-right:10px; margin-top:-5px }
+.doc { padding:10px; margin-bottom:10px; min-height:4.3rem; }
+.doc-col { padding-right:5px; padding-left:5px }
+.doc-date { font-family: 'Roboto Mono', monospace; color:#777; font-size:0.9rem }

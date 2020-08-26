@@ -1,6 +1,6 @@
 ---
-title: Visual Studio Code Notes
-icon: ✍️
+title: Visual Studio Code Configuration
+icon: 🎨
 tags:
   - vscode
 ---
