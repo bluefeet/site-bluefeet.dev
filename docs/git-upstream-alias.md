@@ -1,6 +1,6 @@
 ---
 title: Git Upstream Alias
-icon: ⬆️
+icon: 🌊
 tags:
   - git
   - shell

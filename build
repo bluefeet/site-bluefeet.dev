@@ -6,6 +6,7 @@ const jsyaml = require('js-yaml');
 const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
+const twemoji = require('twemoji');
 
 execSync( 'rm -rf site/docs/*' );
 
@@ -43,16 +44,18 @@ for (const doc of docs) {
     docs,
   });
   
-  const mdHtml = marked( finalMd );
+  let html = marked( finalMd );
 
-  const pageHtml = pageTemplate({
+  html = pageTemplate({
     showComments: true,
     ...doc,
     docs,
-    content: mdHtml,
+    content: html,
   });
 
-  fs.writeFileSync( doc.htmlFile, pageHtml );
+  html = twemoji.parse( html );
+
+  fs.writeFileSync( doc.htmlFile, html );
 }
 
 console.log( 'Running: git add -A site/docs' );

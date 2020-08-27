@@ -1,6 +1,6 @@
 ---
 title: JavaScript for Loops
-icon: 🎡
+icon: 🎠
 tags:
   - javascript
 ---
