@@ -1,14 +1,14 @@
 ---
 title: Dev Setup
-icon: 🦓
+icon: 💻
 ---
 
 ## Shortcuts
 
 | OS | App | Keys | Detail |
 |-|-|-|-|
-| Windows | vscode | F2 | Rename the symbol at the cursor. |
-| Windows | vscode | Ctrl-Shift-P | Command pallette. |
+| Windows | vscode | `F2` | Rename the symbol at the cursor. |
+| Windows | vscode | `Ctrl`-`Shift`-`P` | Command pallette. |
 
 ## Shell Aliases
 

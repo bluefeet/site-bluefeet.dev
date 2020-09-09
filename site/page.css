@@ -8,6 +8,10 @@ body {
   line-height: 1.5;
 }
 
+.menu, .footer, pre, code, .doc-date {
+  font-family: 'Roboto Mono', monospace;
+}
+
 @media (max-width: 1140px) {
   body {
     grid-template-columns: [main-start] auto [main-end];
@@ -93,7 +97,6 @@ h1 {
   grid-column: main-start / main-end;
   grid-row: menu-start / menu-end;
   padding: 8px 20px;
-  font-family: 'Roboto Mono', monospace;
   font-size: 1.2rem;
 }
 
@@ -150,7 +153,6 @@ h1 {
 .footer {
   grid-column: main-start / main-end;
   grid-row: footer-start / footer-end;
-  font-family: 'Roboto Mono', monospace;
   padding: 30px;
   font-size: 0.9rem;
   color: #aaa;
@@ -162,7 +164,6 @@ h1 {
 
 pre {
   background-color: #333;
-  font-family: 'Roboto Mono', monospace;
   color: #ddd;
   padding: 10px;
   /* https://techstacker.com/responsive-pre-tags-css/ Thanks! */
@@ -171,7 +172,10 @@ pre {
 }
 
 code {
-  font-family: 'Roboto Mono', monospace;
+  color: rgb(179, 202, 221);;
+}
+
+pre code {
   color: #ddd;
 }
 
@@ -183,6 +187,15 @@ h2 {
 
 th {
   border-bottom: solid 1px #888;
+}
+
+table {
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0.5rem;
+  text-align: left;
 }
 
 .docs {
@@ -224,7 +237,6 @@ th {
 
 .doc-date {
   white-space: nowrap;
-  font-family: 'Roboto Mono', monospace;
   color: #666;
   font-size: 0.9rem;
 }

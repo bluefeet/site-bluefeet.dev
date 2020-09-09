@@ -8,8 +8,6 @@ const fs = require('fs');
 const { execSync } = require('child_process');
 const twemoji = require('twemoji');
 
-execSync( 'rm -rf site/docs/*' );
-
 const files = fs.readdirSync( 'docs' ).sort();
 const docs = [];
 for (const file of files) {
@@ -58,9 +56,6 @@ for (const doc of docs) {
   fs.writeFileSync( doc.htmlFile, html );
 }
 
-console.log( 'Running: git add -A site/docs' );
-execSync('git add -A site/docs');
-
 function loadDoc (file) {
   const mdFile = path.join( 'docs', file );
   console.log( `Loading: ${mdFile}` );
@@ -75,7 +70,7 @@ function loadDoc (file) {
   meta.md = md;
   meta.tags = meta.tags ? meta.tags.sort() : [];
 
-  meta.urlPath = meta.urlPath || path.join( path.dirname( mdFile ), path.basename( mdFile, '.md' ) + '.html' );
+  meta.urlPath = meta.urlPath || path.join( path.basename( mdFile, '.md' ) + '.html' );
   meta.htmlFile = path.join( 'site', meta.urlPath );
 
   let logLines = execSync(
