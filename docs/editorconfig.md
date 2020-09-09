@@ -1,9 +1,6 @@
 ---
 title: EditorConfig
 icon: 📑
-tags:
-  - devtool
-  - editorconfig
 ---
 
 See [editorconfig.org](https://editorconfig.org/).

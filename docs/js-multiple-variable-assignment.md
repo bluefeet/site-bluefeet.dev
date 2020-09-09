@@ -1,8 +1,6 @@
 ---
 title: JavaScript Multiple Variable Assignment
 icon: 🌗
-tags:
-  - javascript
 ---
 
 This creates the variable `a` and `b` from the left side and assigns them to the value of the same-named object key on the right.

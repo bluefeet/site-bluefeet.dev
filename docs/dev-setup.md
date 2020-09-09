@@ -1,13 +1,21 @@
 ---
-title: Zsh Cheatsheet
+title: Dev Setup
 icon: 🦓
-tags:
-  - cheatsheet
-  - zsh
 ---
 
-| alias | command |
-| --- | --- |
+## Shortcuts
+
+| OS | App | Keys | Detail |
+|-|-|-|-|
+| Windows | vscode | F2 | Rename the symbol at the cursor. |
+| Windows | vscode | Ctrl-Shift-P | Command pallette. |
+
+## Shell Aliases
+
+These are my most used aliases from [oh my zsh](https://ohmyz.sh/) which I've also back-ported into my bash setup for those times that I'm on a system without zsh.
+
+| Alias | Command |
+|-|-|
 | `ga` | `git add` |
 | `gapa` | `git add --patch` |
 | `gbl` | `git blame -b -w` |

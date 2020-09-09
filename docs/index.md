@@ -1,8 +1,7 @@
 ---
 title: bluefeet
-subTitle: Where the Wookiee nerds out.
+subTitle: The Wookie's external memory device.
 icon: ⛺
-showComments: false
 isHome: true
 urlPath: index.html
 ---

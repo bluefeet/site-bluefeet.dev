@@ -1,8 +1,6 @@
 ---
 title: JavaScript Spread Syntax and Rest Parameters
 icon: 📦
-tags:
-  - javascript
 ---
 
 ## Spread Syntax

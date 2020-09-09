@@ -1,10 +1,6 @@
 ---
 title: JavaScript Modules
 icon: 🥜
-tags:
-  - javascript
-  - commmonjs
-  - es6
 ---
 
 ## CommonJS

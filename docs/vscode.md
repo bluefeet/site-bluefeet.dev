@@ -1,8 +1,6 @@
 ---
-title: Visual Studio Code Configuration
+title: Visual Studio Code
 icon: 🎨
-tags:
-  - vscode
 ---
 
 ## Definition of a Workspace
@@ -43,3 +41,21 @@ Declare project-specific [tasks](https://code.visualstudio.com/docs/editor/tasks
   ]
 }
 ```
+
+## Remote SSH through WSL
+
+Create `C:\wsl-ssh\wsl-ssh.cmd`:
+
+```shell
+wsl ssh %*
+```
+
+And in your user settings add:
+
+```json
+{
+    "remote.SSH.path": "C:\\wsl-ssh\\wsl-ssh.cmd"
+}
+```
+
+Now when you setup an SSH remote it will use the binary installed in your default WSL distro.

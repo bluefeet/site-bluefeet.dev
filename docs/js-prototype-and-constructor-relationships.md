@@ -1,9 +1,6 @@
 ---
 title: JavaScript Prototype and Constructor Inheritance
 icon: 🦖
-tags:
-  - javascript
-  - inheritance
 ---
 
 Given:

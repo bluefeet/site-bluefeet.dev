@@ -1,8 +1,6 @@
 ---
 title: SSH Config
 icon: 🚎
-tags:
-  - ssh
 ---
 
 Enable these as appropriate:

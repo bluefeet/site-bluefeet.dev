@@ -1,9 +1,6 @@
 ---
 title: Badgers?
 icon: 🦡
-tags:
-  - badgers
-  - meme
 ---
 
 <p><div class="embed-responsive embed-responsive-16by9">

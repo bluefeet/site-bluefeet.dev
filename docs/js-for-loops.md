@@ -1,8 +1,6 @@
 ---
 title: JavaScript for Loops
 icon: 🎠
-tags:
-  - javascript
 ---
 
 Iterating over elements in an array using [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of):

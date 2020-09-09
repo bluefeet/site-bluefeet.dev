@@ -1,9 +1,6 @@
 ---
 title: Git Config
 icon: 🐙
-tags:
-  - git
-  - shell
 ---
 
 ```sh

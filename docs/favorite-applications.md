@@ -1,8 +1,6 @@
 ---
 title: Favorite Applications
 icon: 📌
-tags:
-  - favorites
 ---
 
 - [belenaEtcher](https://www.balena.io/etcher/) - For flashing USB drives with OS images.  `#windows`
