@@ -1,15 +1,72 @@
+:root {
+  --font-family-sans: 'Roboto', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+  --font-weight-regular: 300;
+  --color: #fff;
+  --background-color: #111;
+  --a-color: rgb(106, 208, 255);
+  --a-visited-color: rgb(17, 148, 209);
+  --a-hover-color: rgb(170, 228, 255);
+  --header-background-color: rgb(7,94,165);
+  --h1-color: #fff;
+  --menu-background-color: rgb(3, 44, 78);
+  --content-border-color: #666;
+  --content-background-color: #222;
+  --footer-color: #aaa;
+  --pre-color: #ddd;
+  --pre-background-color: #333;
+  --code-color: rgb(179, 202, 221);
+  --h2-color: #bbb;
+  --h2-border-color: #555;
+  --th-border-color: #555;
+  --doc-background-color: #111;
+  --doc-hover-background-color: #333;
+  --doc-date-color: #666;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --font-weight-regular: 400;
+    --color: #000;
+    --background-color: #eee;
+    --a-color: rgb(7,94,165);
+    --a-visited-color: rgb(4, 66, 117);
+    --a-hover-color: rgb(28, 131, 214);
+    --header-background-color: #888;
+    --menu-background-color: #bbb;
+    --content-border-color: #aaa;
+    --content-background-color: #fff;
+    --footer-color: #666;
+    --pre-color: #444;
+    --pre-background-color: #eee;
+    --code-color: rgb(75, 120, 156);
+    --h2-color: #444;
+    --h2-border-color: #bbb;
+    --th-border-color: #bbb;
+    --doc-background-color: #ddd;
+    --doc-hover-background-color: #eee;
+    --doc-date-color: #666;
+  }
+
+  pre code * { /* Sorry light, you don't get rainbows. */
+    color: var(--pre-color) !important;
+  }
+}
+
 body {
   display: grid;
   grid-template-columns: [left-start] auto [left-end main-start] 1140px [main-end right-start] auto [right-end];
   grid-template-rows: [header-start] auto [header-end menu-start] auto [menu-end content-start] auto [content-end footer-start] auto [footer-end];
-  background-color: #111;
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-regular);
   line-height: 1.5;
+  color: var(--color);
+  background-color: var(--background-color);
 }
 
 .menu, .footer, pre, code, .doc-date {
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-regular);
 }
 
 @media (max-width: 1140px) {
@@ -21,9 +78,9 @@ body {
   }
 }
 
-a { color: rgb(106, 208, 255); text-decoration:none }
-a:visited { color: rgb(17, 148, 209) }
-a:hover { color: rgb(170, 228, 255); text-decoration:none }
+a { color:var(--a-color); text-decoration:none }
+a:visited { color:var(--a-visited-color) }
+a:hover { color:var(--a-hover-color); text-decoration:none }
 
 table {
   /* The same margins <p> gets. */
@@ -73,7 +130,7 @@ img.emoji {
 }
 
 .header-left, .header-right, .header {
-  background: rgb(7,94,165);
+  background: var(--header-background-color);
 }
 
 .header-left, .header-right { grid-row: header-start / header-end }
@@ -81,10 +138,11 @@ img.emoji {
 .header-right { grid-column: right-start / right-end }
 
 h1 {
+  color: var(--h1-color);
   margin: 0px;
   flex-grow: 1;
   font-size: 2.5rem;
-  font-weight: normal;
+  font-weight: var(--font-weight-regular);
 }
 
 .header-icon {
@@ -101,7 +159,7 @@ h1 {
 }
 
 .menu-left, .menu-right, .menu {
-  background: rgb(3, 44, 78);
+  background: var(--menu-background-color);
 }
 
 .menu-left, .menu-right { grid-row: menu-start / menu-end }
@@ -134,16 +192,12 @@ h1 {
   .content-main {
     flex-grow: 1;
   }
-  .content-chat {
-    min-width: 300px;
-    padding-left: 20px;
-  }
 }
 
 .content-left, .content-right, .content {
-  border: solid 1px #666;
+  border: solid 1px var(--content-border-color);
   border-width: 1px 0px;
-  background: #222;
+  background: var(--content-background-color);
 }
 
 .content-left, .content-right { grid-row: content-start / content-end }
@@ -155,7 +209,7 @@ h1 {
   grid-row: footer-start / footer-end;
   padding: 30px;
   font-size: 0.9rem;
-  color: #aaa;
+  color: var(--footer-color);
 }
 
 .footer-date {
@@ -163,8 +217,8 @@ h1 {
 }
 
 pre {
-  background-color: #333;
-  color: #ddd;
+  background-color: var(--pre-background-color);
+  color: var(--pre-color);
   padding: 10px;
   /* https://techstacker.com/responsive-pre-tags-css/ Thanks! */
   white-space: pre-wrap;
@@ -172,21 +226,21 @@ pre {
 }
 
 code {
-  color: rgb(179, 202, 221);;
+  color: var(--code-color);
 }
 
 pre code {
-  color: #ddd;
+  color: var(--pre-color);
 }
 
 h2 {
   font-size: 1.8rem;
-  color: #bbb;
-  border-bottom: dashed 2px #555;
+  color: var(--h2-color);
+  border-bottom: dashed 2px var(--h2-border-color);
 }
 
 th {
-  border-bottom: solid 1px #888;
+  border-bottom: solid 1px var(--th-border-color);
 }
 
 table {
@@ -208,13 +262,13 @@ td, th {
 }
 
 .docs a {
-  background-color: #111;
+  background-color: var(--doc-background-color);
   display: block;
   margin-bottom: 10px;
 }
 
 .docs a:hover {
-  background-color: #333;
+  background-color: var(--doc-hover-background-color);
 }
 
 .doc {
@@ -237,7 +291,7 @@ td, th {
 
 .doc-date {
   white-space: nowrap;
-  color: #666;
+  color: var(--doc-date-color);
   font-size: 0.9rem;
 }
 
@@ -249,3 +303,4 @@ td, th {
     width: 100%;
   }
 }
+

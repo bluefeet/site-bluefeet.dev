@@ -1,6 +1,5 @@
 ---
 title: bluefeet
-subTitle: The Wookie's external memory device.
 icon: ⛺
 isHome: true
 urlPath: index.html
