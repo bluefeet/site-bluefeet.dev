@@ -1,6 +1,6 @@
 ---
 title: Visual Studio Code
-icon: 🎨
+icon: 👁️
 ---
 
 ## Definition of a Workspace
