@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="normalize.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/rainbow.min.css" rel="stylesheet">
+    <link href="page.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div class="header-left"></div>
+<div class="header-right"></div>
+<div class="header">
+  <div class="header-icon"><img class="emoji" draggable="false" alt="📜" src="https://twemoji.maxcdn.com/v/13.0.1/72x72/1f4dc.png"/></div>
+  <h1>JavaScript</h1>
+</div>
+
+<div class="menu-left"></div>
+<div class="menu-right"></div>
+<div class="menu">
+  <ul>
+    <li><a href="index.html">&lt;home</a></li>
+  </ul>
+</div>
+
+<div class="content-left"></div>
+<div class="content-right"></div>
+<div class="content">
+  <div class="content-main">
+    <h2 id="arrow-function-expression">Arrow Function Expression</h2>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow function expression</a> (=&gt;) creates anonymous functions who do not have their <code>this</code>, <code>arguments</code>, <code>super</code>, or <code>new.target</code> set.  This is especially useful for callbacks where you don’t need all that state.</p>
+<pre><code class="language-js">[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].forEach( <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> {
+  <span class="hljs-comment">// Do something with num.</span>
+});
+
+<span class="hljs-keyword">const</span> someFunc = <span class="hljs-function">() =&gt;</span> { <span class="hljs-comment">/* do stuff */</span> };
+someFunc();</code></pre>
+<h2 id="for-loops">for Loops</h2>
+<p>Iterating over elements in an array using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">for...of</a>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> thing <span class="hljs-keyword">of</span> things) { <span class="hljs-comment">/* ... */</span> }</code></pre>
+<p>Iterating over elements in an array using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>:</p>
+<pre><code class="language-js">things.forEach( <span class="hljs-function"><span class="hljs-params">thing</span> =&gt;</span> { <span class="hljs-comment">/* ... */</span> } );</code></pre>
+<p>Iterating over elements in an array using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for</a>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i&lt;things.length; i++) { <span class="hljs-comment">/* ... */</span> }</code></pre>
+<p>Iterate over the properties in an object using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">for...in</a>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> property <span class="hljs-keyword">in</span> thing) { <span class="hljs-comment">/* ... */</span> }</code></pre>
+<p>Iterate over the properties in an object using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">Object.keys()</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>:</p>
+<pre><code class="language-js"><span class="hljs-built_in">Object</span>.keys( thing ).forEach( <span class="hljs-function"><span class="hljs-params">property</span> =&gt;</span> { <span class="hljs-comment">/* ... */</span> });</code></pre>
+<h2 id="modules">Modules</h2>
+<h3 id="commonjs">CommonJS</h3>
+<p>Setup exports with the <code>module.exports</code> object:</p>
+<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = { someFunc1, someFunc2 };</code></pre>
+<p>Import a module with the <code>require</code> function:</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> { someFunc1 } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path/to/module&#x27;</span>);</code></pre>
+<h3 id="es6">ES6</h3>
+<p>Export things:</p>
+<pre><code class="language-js"><span class="hljs-comment">// One at a time.</span>
+<span class="hljs-keyword">export</span> someFunc1;
+<span class="hljs-keyword">export</span> someFunc2;
+
+<span class="hljs-comment">// Or all together:</span>
+<span class="hljs-keyword">export</span> { someFunc1, someFunc2 };
+
+<span class="hljs-comment">// Or export a single default:</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> mainFunc;</code></pre>
+<p>Import things:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { someFunc1, someFunc2 } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;path/to/module&#x27;</span>;
+
+<span class="hljs-comment">// You can also import everything.</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> variableName <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;path/to/module&#x27;</span>;
+
+<span class="hljs-comment">// Use as to alias an import:</span>
+<span class="hljs-keyword">import</span> { someFunc1 <span class="hljs-keyword">as</span> myFunc } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;path/to/module&#x27;</span>;
+
+<span class="hljs-comment">// Import the default export:</span>
+<span class="hljs-keyword">import</span> variableName <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;path/to/module&#x27;</span>;</code></pre>
+<h2 id="multiple-variable-assignment">Multiple Variable Assignment</h2>
+<p>This creates the variable <code>a</code> and <code>b</code> from the left side and assigns them to the value of the same-named object key on the right.</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> { a, b } = { <span class="hljs-attr">a</span>:<span class="hljs-number">32</span>, <span class="hljs-attr">b</span>:<span class="hljs-number">45</span> };</code></pre>
+<p>This does the same with an array:</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> [ a, b ] = [ <span class="hljs-number">32</span>, <span class="hljs-number">45</span> ];</code></pre>
+<p>When using object notation you can alias keys to a different variable name:</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> { <span class="hljs-attr">b</span>:bbb } = { <span class="hljs-attr">a</span>:<span class="hljs-number">32</span>, <span class="hljs-attr">b</span>:<span class="hljs-number">45</span> };</code></pre>
+<p>The above creates a <code>bbb</code> variable which has the value <code>45</code>.</p>
+<h2 id="object-initializer-notation">Object Initializer Notation</h2>
+<p>The official syntax for the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer">object initializer</a>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> o = {
+  <span class="hljs-attr">key</span>: value,
+  variable, <span class="hljs-comment">// Shorthand for: variable: variable</span>
+  <span class="hljs-attr">property</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">parameters</span>) </span>{},
+  property (parameters) {}, <span class="hljs-comment">// Shorthand for the above.</span>
+  <span class="hljs-keyword">get</span> <span class="hljs-title">property</span>() {},
+  <span class="hljs-keyword">set</span> <span class="hljs-title">property</span>(<span class="hljs-params">value</span>) {},
+  [<span class="hljs-string">&quot;a&quot;</span>+<span class="hljs-string">&quot;b&quot;</span>]: <span class="hljs-string">&#x27;A computed key of ab.&#x27;</span>
+};</code></pre>
+<p>These two lines are the same:</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> someObj = { a, b };
+<span class="hljs-keyword">let</span> someObj = { <span class="hljs-attr">a</span>:a, <span class="hljs-attr">b</span>:b };</code></pre>
+<h2 id="prototype-and-constructor-inheritance">Prototype and Constructor Inheritance</h2>
+<p>Given:</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Animal</span> (<span class="hljs-params"></span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Human</span> (<span class="hljs-params"></span>) </span>{}
+Human.prototype.__proto__ = Animal.prototype;
+<span class="hljs-keyword">var</span> person = <span class="hljs-keyword">new</span> Human();</code></pre>
+<p>Then:</p>
+<pre><code class="language-js">person.__proto__ === Human.prototype;
+person.constructor === Human;
+
+Human.prototype.constructor === Human;
+Human.prototype.__proto__ === Animal.prototype;
+
+Animal.prototype.constructor === Animal;
+Animal.prototype.__proto__ === <span class="hljs-built_in">Object</span>.prototype;</code></pre>
+<h2 id="spread-syntax">Spread Syntax</h2>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a> takes an array or object and expands it into its elements/properties.</p>
+<p>These two lines are identical:</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> foo = [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ];
+<span class="hljs-keyword">let</span> foo = [ ...[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] ];</code></pre>
+<p>A shallow clone of an object:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> clone = { ...someObject };</code></pre>
+<p>Building arguments with defaults:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> args = { <span class="hljs-attr">defKey</span>: <span class="hljs-string">&#x27;defVal&#x27;</span>, ...customArgs }; <span class="hljs-comment">// Right side wins.</span></code></pre>
+<h2 id="rest-parameters">Rest Parameters</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">Rest parameters</a> are used to gather multiple arguments to a function into a single array.</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span> (<span class="hljs-params">firstNum, ...nums</span>) </span>{ <span class="hljs-comment">/* nums is [2,3] */</span> }
+bar( <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> );</code></pre>
+<h2 id="cascading-inherited-arguments">Cascading Inherited Arguments</h2>
+<p>Spread syntax and rest parameters, together, provide the ability to cascade arguments:</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doThingA</span> (<span class="hljs-params">firstArg, ...args</span>) </span>{
+  firstArg = <span class="hljs-built_in">this</span>.modifyFirstArg( firstArg );
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.doThing( firstArg, ...args );
+}</code></pre>
+
+  </div>
+</div>
+
+<div class="footer">
+  This page "<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">JavaScript</span>" is &copy;  <a xmlns:cc="http://creativecommons.org/ns#" href="https://bluefeet.dev" property="cc:attributionName" rel="cc:attributionURL">Aran Deltac</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>, was <a href="https://github.com/bluefeet/site-bluefeet.dev/commits/master/docs/">most recently modified</a> on <span class="footer-date"></span>, and is hosted for free by <a href="https://netlify.com/">Netlify</a>. <img class="emoji" draggable="false" alt="🖖" src="https://twemoji.maxcdn.com/v/13.0.1/72x72/1f596.png"/>
+</div>
+
+  </body>
+</html>

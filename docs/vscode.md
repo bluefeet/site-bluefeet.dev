@@ -1,11 +1,11 @@
 ---
 title: Visual Studio Code
-icon: 👁️
+icon: 🔭
 ---
 
 ## Definition of a Workspace
 
-Workspaces are a saved snapshot of the state of a Visual Studio Code window. This includes any workspace settings, unsaved buffers, extensions, terminal state, etc.
+Workspaces are a saved snapshot of the state of a Visual Studio Code window. This includes any workspace settings, unsaved buffers, extensions, selections, cursors, terminals, etc.
 
 ## Where to Store Workspaces
 
