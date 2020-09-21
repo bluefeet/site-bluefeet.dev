@@ -2,7 +2,7 @@
   "name": "site-bluefeet.dev",
   "version": "1.0.0",
   "dependencies": {
-    "dompurify": "^2.0.15",
+    "dompurify": "^2.0.17",
     "handlebars": "^4.7.6",
     "highlight.js": "^10.2.0",
     "js-yaml": "^3.14.0",
